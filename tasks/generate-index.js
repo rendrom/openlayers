@@ -87,7 +87,7 @@ function generateExports(symbols, namespaces, imports) {
       nsdefs.push(`${ns[i]} = {};`);
     }
   }
-  blocks = imports.concat('\nvar ol = window[\'ol\'] = {};\n', nsdefs.sort()).concat(blocks.sort());
+  blocks = imports.concat('\nexport default ol = window[\'ol\'] = {};\n', nsdefs.sort()).concat(blocks.sort());
   blocks.push('');
   return blocks.join('\n');
 }
